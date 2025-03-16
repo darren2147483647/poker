@@ -1,0 +1,13 @@
+variant = 'NT'
+ante_trimming_status = false
+antes = [0, 3000000, 0, 0, 0, 0, 0, 0]
+blinds_or_straddles = [1500000, 3000000, 0, 0, 0, 0, 0, 0]
+min_bet = 3000000
+starting_stacks = [88000000, 160000000, 97500000, 91500000, 171500000, 56500000, 57500000, 215000000]
+actions = ['d dh p1 5d4c', 'd dh p2 QsTs', 'd dh p3 Tc7d', 'd dh p4 6s2s', 'd dh p5 Kd3h', 'd dh p6 Ks9h', 'd dh p7 7s6d', 'd dh p8 Th3d', 'p3 f', 'p4 f', 'p5 f', 'p6 f', 'p7 f', 'p8 f', 'p1 f']
+event = '2024 World Series of Poker Paradise Event #9: $25,000 Super Main Event | Day 5 (FINAL TABLE)'
+day = 20
+month = 12
+year = 2024
+players = ['Yinan Zhou', 'Christopher Nguyen', 'Liz Boeree', 'Marcelo Aziz', 'Mustapha Kanit', 'Vadzim Lipauka', 'Justin Bonomo', 'Michael Addamo']
+finishing_stacks = [86500000, 161500000, 97500000, 91500000, 171500000, 56500000, 57500000, 215000000]
