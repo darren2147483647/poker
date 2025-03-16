@@ -43,7 +43,6 @@ y = np.random.randint(0, 2, 100)  # 0 或 1 兩類
 X_train, X_test, y_train, y_test = train_test_split(features, gt, test_size=0.2, random_state=42)
 
 # 建立 AdaBoost 模型，基礎學習器使用決策樹
-base_learner = DecisionTreeClassifier(max_depth=1)  # 弱學習器
 model = AdaBoostClassifier(n_estimators=50, random_state=42)
 
 # 訓練模型
