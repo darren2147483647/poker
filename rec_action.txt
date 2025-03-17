@@ -1,0 +1,18 @@
+['d dh p1 KsTd', 'd dh p2 9d5d', 'd dh p3 Ah4c', 'd dh p4 9s3c', 'd dh p5 2c2s', 'd dh p6 Jh8h', 'd dh p7 Tc6h', 'd dh p8 Jc7h', 'd dh p9 QdQc', 'p3 f', 'p4 f', 'p5 f', 'p6 f', 'p7 f', 'p8 f', 'p9 cbr 6000000', 'p1 f', 'p2 cbr 20000000', 'p9 f']
+['d dh p1 9c4s', 'd dh p2 3c2s', 'd dh p3 6s4h', 'd dh p4 Js8d', 'd dh p5 Qs9h', 'd dh p6 Jh7h', 'd dh p7 Ac7c', 'd dh p8 Td8c', 'd dh p9 5d3h', 'p3 f', 'p4 f', 'p5 f', 'p6 f', 'p7 cbr 6000000', 'p8 f', 'p9 f', 'p1 f', 'p2 f']
+['d dh p1 8s3s', 'd dh p2 Ts5d', 'd dh p3 Js9d', 'd dh p4 Kd3d', 'd dh p5 Ad7d', 'd dh p6 8d7h', 'd dh p7 9h7c', 'd dh p8 Jc3h', 'd dh p9 QdTh', 'p3 f', 'p4 f', 'p5 cbr 6000000', 'p6 f', 'p7 f', 'p8 f', 'p9 f', 'p1 f', 'p2 f']
+['d dh p1 Ts6c', 'd dh p2 4d4c', 'd dh p3 AdTc', 'd dh p4 Qd9s', 'd dh p5 7c3h', 'd dh p6 9c2s', 'd dh p7 KcJd', 'd dh p8 As5h', 'd dh p9 Kd2d', 'p3 cbr 6000000', 'p4 f', 'p5 f', 'p6 f', 'p7 f', 'p8 f', 'p9 f', 'p1 f', 'p2 cc', 'd db AhJc2h', 'p2 cc', 'p3 cbr 7500000', 'p2 f']
+['d dh p1 Ts6c', 'd dh p2 4c4d', 'd dh p3 AdTc', 'd dh p4 Qs4s', 'd dh p5 7c3h', 'd dh p6 9c2s', 'd dh p7 KcJd', 'd dh p8 As5h', 'd dh p9 Kd2d', 'p3 cbr 6000000', 'p4 f', 'p5 f', 'p6 f', 'p7 f', 'p8 f', 'p9 f', 'p1 f', 'p2 cc', 'd db AhJc2h', 'p2 cc', 'p3 cbr 7500000', 'p2 f']
+['d dh p1 Js3s', 'd dh p2 QhJh', 'd dh p3 5s4c', 'd dh p4 Th5h', 'd dh p5 8c8h', 'd dh p6 Ad4h', 'd dh p7 KdQc', 'd dh p8 Ts5d', 'd dh p9 Jd9s', 'p3 f', 'p4 f', 'p5 cbr 6000000', 'p6 f', 'p7 cbr 11000000', 'p8 f', 'p9 f', 'p1 f', 'p2 f', 'p5 cc', 'd db 3d9d7c', 'p5 cc', 'p7 cbr 6000000', 'p5 cc', 'd db Ac', 'p5 cc', 'p7 cbr 5000000', 'p5 f']
+['d dh p1 Ad2d', 'd dh p2 Ah8h', 'd dh p3 Qs8s', 'd dh p4 Qh3d', 'd dh p5 9s3h', 'd dh p6 7h2h', 'd dh p7 4h2c', 'd dh p8 9c7d', 'd dh p9 Kd5c', 'p3 cbr 6000000', 'p4 f', 'p5 f', 'p6 f', 'p7 f', 'p8 f', 'p9 f', 'p1 f', 'p2 cc', 'd db 6cJdKs', 'p2 cc', 'p3 cbr 5500000', 'p2 f']
+['d dh p1 Kd7s', 'd dh p2 KcTh', 'd dh p3 7h6d', 'd dh p4 Ah5c', 'd dh p5 3s2s', 'd dh p6 8c4s', 'd dh p7 Jh2h', 'd dh p8 AdTc', 'd dh p9 9s7c', 'p3 f', 'p4 f', 'p5 f', 'p6 f', 'p7 f', 'p8 cbr 6000000', 'p9 f', 'p1 f', 'p2 cc', 'd db 5s4c7d', 'p2 cbr 5500000', 'p8 cc', 'd db 9d', 'p2 cc', 'p8 cc', 'd db 2c', 'p2 cc', 'p8 cc', 'p2 sm KcTh', 'p8 sm AdTc']
+['d dh p1 Th3s', 'd dh p2 Kc5s', 'd dh p3 7d7h', 'd dh p4 Jh4h', 'd dh p5 AhJd', 'd dh p6 9d6c', 'd dh p7 AsKh', 'd dh p8 9h8h', 'd dh p9 Ac7c', 'p3 f', 'p4 f', 'p5 cbr 6500000', 'p6 f', 'p7 cbr 20500000', 'p8 f', 'p9 f', 'p1 f', 'p2 f', 'p5 f']
+['d dh p1 Ac9s', 'd dh p2 Js3s', 'd dh p3 Kc7h', 'd dh p4 Qd2h', 'd dh p5 Qc6c', 'd dh p6 7s5d', 'd dh p7 Td6d', 'd dh p8 Ks2c', 'd dh p9 AsJh', 'p3 f', 'p4 f', 'p5 f', 'p6 f', 'p7 f', 'p8 f', 'p9 cbr 6000000', 'p1 cbr 24000000', 'p2 f', 'p9 cc', 'p1 sm Ac9s', 'p9 sm AsJh', 'd db Kh3hQh', 'd db 2s', 'd db Jc']
+wtf
+*eliminate*
+['d dh p1 5d4c', 'd dh p2 QsTs', 'd dh p3 Tc7d', 'd dh p4 6s2s', 'd dh p5 Kd3h', 'd dh p6 Ks9h', 'd dh p7 7s6d', 'd dh p8 Th3d', 'p3 f', 'p4 f', 'p5 f', 'p6 f', 'p7 f', 'p8 f', 'p1 f']
+['d dh p1 Js7d', 'd dh p2 Td3c', 'd dh p3 4h3d', 'd dh p4 9d5h', 'd dh p5 Th9s', 'd dh p6 5c4c', 'd dh p7 Jc9h', 'd dh p8 Tc6s', 'p3 f', 'p4 f', 'p5 f', 'p6 f', 'p7 cbr 6000000', 'p8 f', 'p1 f', 'p2 f']
+['d dh p1 8h2d', 'd dh p2 Ad6h', 'd dh p3 Qh3c', 'd dh p4 6d3s', 'd dh p5 Jc3d', 'd dh p6 Kd2s', 'd dh p7 Ks4h', 'd dh p8 Kh6s', 'p3 f', 'p4 f', 'p5 f', 'p6 cbr 6000000', 'p7 f', 'p8 f', 'p1 f', 'p2 f']
+['d dh p1 5d3c', 'd dh p2 7s4d', 'd dh p3 7d6c', 'd dh p4 2c2s', 'd dh p5 Qh2h', 'd dh p6 JcTc', 'd dh p7 Ad8c', 'd dh p8 9h3s', 'p3 f', 'p4 f', 'p5 cbr 6000000', 'p6 f', 'p7 f', 'p8 f', 'p1 f', 'p2 f']
+wtf
+*table upgrade*

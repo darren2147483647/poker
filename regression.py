@@ -4,8 +4,8 @@ import torch.optim as optim
 import numpy as np
 from torch.utils.data import Dataset, DataLoader
 import matplotlib.pyplot as plt
-# from sklearn.model_selection import KFold
-# from sklearn.metrics import mean_squared_error, mean_absolute_error
+from sklearn.model_selection import KFold
+from sklearn.metrics import mean_squared_error, mean_absolute_error
 import label_extract
 
 class PokerDataset(Dataset):
@@ -131,7 +131,7 @@ mean_error = np.mean(np.abs(error))
 mse_error = np.mean((error)*(error))
 print(f"average chips eror: {mean_error}")
 print(f"mse: {mse_error}")
-visualize(all_predict, all_targets)
+# visualize(all_predict, all_targets)
 
 
 ### k-fold
@@ -152,7 +152,6 @@ mae_scores = []
 
 for fold, (train_idx, val_idx) in enumerate(kf.split(features)):
     print(f"Fold {fold + 1}/{k}")
-
     # 切分訓練集與驗證集
     X_train, X_val = features[train_idx], features[val_idx]
     y_train, y_val = targets[train_idx], targets[val_idx]
@@ -170,10 +169,10 @@ for fold, (train_idx, val_idx) in enumerate(kf.split(features)):
     # 在驗證集上進行預測
     all_predict = []
     all_targets = []
-    for features, targets in val_loader:
-        predict = inference(model, features)
-        all_predict.append(predict.numpy())
-        all_targets.append(targets.numpy())
+    for features_, targets_ in val_loader:
+        predict_ = inference(model, features_)
+        all_predict.append(predict_.numpy())
+        all_targets.append(targets_.numpy())
 
     # 合併所有批次的預測結果
     all_predict = np.concatenate([p.squeeze(1) for p in all_predict], axis=0)
