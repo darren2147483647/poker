@@ -4,6 +4,8 @@ import torch.optim as optim
 import numpy as np
 from torch.utils.data import Dataset, DataLoader
 import matplotlib.pyplot as plt
+# from sklearn.model_selection import KFold
+# from sklearn.metrics import mean_squared_error, mean_absolute_error
 import label_extract
 
 class PokerDataset(Dataset):
@@ -101,19 +103,19 @@ def visualize(predict, targets):
     plt.show()
 
 # 設定資料夾路徑
-folder_path = "train"  # 替換成訓練資料夾路徑
-dataset = PokerDataset(folder_path)
-dataloader = DataLoader(dataset, batch_size=4, shuffle=True)
+folder_path1 = "train"  # 替換成訓練資料夾路徑
+dataset1 = PokerDataset(folder_path1)
+dataloader1 = DataLoader(dataset1, batch_size=4, shuffle=True)
 
 folder_path2 = "test"  # 替換成測試資料夾路徑
 dataset2 = PokerDataset(folder_path2)
 dataloader2 = DataLoader(dataset2, batch_size=4, shuffle=False)
 
-C_in, N = (dataset[0][0].shape)
-C_out, N = (dataset[0][1].shape)
+C_in, N = (dataset1[0][0].shape)
+C_out, N = (dataset1[0][1].shape)
 input_size = C_in * N
 output_size = C_out * N
-model = train_model(dataloader, input_size, output_size)
+model = train_model(dataloader1, input_size, output_size)
 print("Training completed.")
 
 all_predict = []
@@ -126,5 +128,70 @@ all_predict = np.concatenate([p.squeeze(dim = 1).numpy() for p in all_predict], 
 all_targets = np.concatenate([t.squeeze(dim = 1).numpy() for t in all_targets], axis=0)
 error = (all_predict - all_targets)
 mean_error = np.mean(np.abs(error))
+mse_error = np.mean((error)*(error))
 print(f"average chips eror: {mean_error}")
+print(f"mse: {mse_error}")
 visualize(all_predict, all_targets)
+
+
+### k-fold
+# 設定 K-Fold 交叉驗證的折數
+k = 5
+kf = KFold(n_splits=k, shuffle=True, random_state=42)
+
+# 使用所有數據
+folder_path = "hand_record"  # 替換成訓練資料夾路徑
+dataset = PokerDataset(folder_path)
+
+# 轉換數據格式
+features = np.array(dataset.data)
+targets = np.array(dataset.targets)
+
+mse_scores = []
+mae_scores = []
+
+for fold, (train_idx, val_idx) in enumerate(kf.split(features)):
+    print(f"Fold {fold + 1}/{k}")
+
+    # 切分訓練集與驗證集
+    X_train, X_val = features[train_idx], features[val_idx]
+    y_train, y_val = targets[train_idx], targets[val_idx]
+
+    # 轉換為 PyTorch 張量
+    train_dataset = list(zip(torch.tensor(X_train, dtype=torch.float), torch.tensor(y_train, dtype=torch.float)))
+    val_dataset = list(zip(torch.tensor(X_val, dtype=torch.float), torch.tensor(y_val, dtype=torch.float)))
+
+    train_loader = DataLoader(train_dataset, batch_size=4, shuffle=True)
+    val_loader = DataLoader(val_dataset, batch_size=4, shuffle=False)
+
+    # 訓練模型
+    model = train_model(train_loader, input_size, output_size)
+
+    # 在驗證集上進行預測
+    all_predict = []
+    all_targets = []
+    for features, targets in val_loader:
+        predict = inference(model, features)
+        all_predict.append(predict.numpy())
+        all_targets.append(targets.numpy())
+
+    # 合併所有批次的預測結果
+    all_predict = np.concatenate([p.squeeze(1) for p in all_predict], axis=0)
+    all_targets = np.concatenate([t.squeeze(1) for t in all_targets], axis=0)
+
+    # 計算 MSE 和 MAE
+    mse = mean_squared_error(all_targets, all_predict)
+    mae = mean_absolute_error(all_targets, all_predict)
+    mse_scores.append(mse)
+    mae_scores.append(mae)
+
+    print(f"Fold {fold + 1} - MSE: {mse:.4f}, MAE: {mae:.4f}")
+
+# 計算平均誤差
+mean_mse = np.mean(mse_scores)
+mean_mae = np.mean(mae_scores)
+
+print(f"\nFinal Cross-Validation Results:")
+print(f"Average MSE: {mean_mse:.4f}")
+print(f"Average MAE: {mean_mae:.4f}")
+

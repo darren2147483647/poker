@@ -1,7 +1,10 @@
 from sklearn.ensemble import AdaBoostClassifier
-from sklearn.tree import DecisionTreeClassifier
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score
+from sklearn.metrics import confusion_matrix
+from sklearn.metrics import precision_score, recall_score, f1_score
+import matplotlib.pyplot as plt
+import seaborn as sns
 import numpy as np
 import label_extract
 
@@ -35,10 +38,6 @@ dataset = PokerDataset(folder_path)
 features = np.array(dataset.data)
 gt = np.array(dataset.targets)
 
-# 生成示例數據
-X = np.random.rand(100, 5)  # 100筆樣本，每筆5個特徵
-y = np.random.randint(0, 2, 100)  # 0 或 1 兩類
-
 # 分割訓練集和測試集
 X_train, X_test, y_train, y_test = train_test_split(features, gt, test_size=0.2, random_state=42)
 
@@ -54,3 +53,24 @@ y_pred = model.predict(X_test)
 # 評估準確率
 accuracy = accuracy_score(y_test, y_pred)
 print(f"Accuracy: {accuracy:.2f}")
+
+# 計算指標
+precision = precision_score(y_test, y_pred, average='macro')
+recall = recall_score(y_test, y_pred, average='macro')
+f1 = f1_score(y_test, y_pred, average='macro')
+print(f"Precision: {precision:.2f}")
+print(f"Recall: {recall:.2f}")
+print(f"F1-score: {f1:.2f}")
+
+
+# 計算混淆矩陣
+cm = confusion_matrix(y_test, y_pred)
+
+# 繪製混淆矩陣
+plt.figure(figsize=(6, 5))
+sns.heatmap(cm, annot=True, fmt="d", cmap="Blues", xticklabels=np.unique(y_test), yticklabels=np.unique(y_test))
+plt.xlabel("Predicted Label")
+plt.ylabel("True Label")
+plt.title("Confusion Matrix")
+plt.show()
+

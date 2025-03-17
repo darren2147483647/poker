@@ -132,6 +132,8 @@ def to_single(phh_info, return_key = False):
     n_players = len(phh_info[keys[0]])
     single_info = []
     for i in range(n_players):
+        if phh_info['starting_stacks'][i] == 0:
+            continue
         info = []
         for key in keys:
             info.append(phh_info[key][i])

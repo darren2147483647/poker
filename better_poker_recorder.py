@@ -298,8 +298,8 @@ def create_new_phh_from_eliminate(old_filename,new_filname,n_players=None,n_star
     write_hh(new_filname, game, n_state, n_players, others, fix = False)
 
 if __name__=="__main__":
-    old_filename = "hand_record/12.phh"
-    new_filename = "hand_record/13.phh"
+    old_filename = "hand_record/13.phh"
+    new_filename = "hand_record/14.phh"
     create_new_phh(old_filename,new_filename)
     # create_new_phh_from_eliminate(old_filename,new_filename)
     #編輯action
