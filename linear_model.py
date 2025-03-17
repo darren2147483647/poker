@@ -131,7 +131,7 @@ mean_error = np.mean(np.abs(error))
 mse_error = np.mean((error)*(error))
 print(f"average chips eror: {mean_error}")
 print(f"mse: {mse_error}")
-# visualize(all_predict, all_targets)
+visualize(all_predict, all_targets)
 
 
 ### k-fold
