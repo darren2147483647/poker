@@ -1,16 +1,5 @@
-# #exp
-# phh_info={
-#     'antes': [0, 3000000, 0, 0, 0, 0, 0, 0, 0],
-#     'blinds_or_straddles': [1500000, 3000000, 0, 0, 0, 0, 0, 0, 0],
-#     'min_bet': 3000000,
-#     'starting_stacks': [48500000, 88000000, 143000000, 111500000, 102000000, 141500000, 46000000, 63500000, 196500000],
-#     'deck': ['KsTd', '9d5d', 'Ah4c', '9s3c', '2c2s', 'Jh8h', 'Tc6h', 'Jc7h', 'QdQc'],
-#     'players': ['Georg Lehmann', 'Yinan Zhou', 'Christopher Nguyen', 'Liz Boeree', 'Marcelo Aziz', 'Mustapha Kanit', 'Vadzim Lipauka', 'Justin Bonomo', 'Michael Addamo'],
-#     'finishing_stacks': [47000000, 95500000, 143000000, 111500000, 102000000, 141500000, 46000000, 63500000, 190500000]
-# }
+# 以下為從phh文件提取部分關鍵資訊的程式，不見得適用於所有情況，不保證適用任何phh文件，建議自己寫一支更全面的特徵提取程式
 
-# eval()可能執行任意代碼，確保來源是可信的
-# 這裡我只能用來解析自己的資料集
 import ast
 import os
 

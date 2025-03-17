@@ -30,6 +30,7 @@ class PokerDataset(Dataset):
     def __getitem__(self, idx):
         return torch.tensor(self.data[idx], dtype=torch.float), torch.tensor(self.targets[idx], dtype=torch.float)
 
+# 簡單linear regression model
 class PokerNet(nn.Module):
     def __init__(self, input_size, output_size, hidden_sizes=[128, 64]):
         super(PokerNet, self).__init__()
@@ -47,6 +48,7 @@ class PokerNet(nn.Module):
         x = self.fc3(x)
         return x.view(x.size(0), 1, -1)
 
+# 訓練
 def train_model(dataloader, input_size, output_size):
     model = PokerNet(input_size, output_size)
     criterion = nn.MSELoss()
@@ -64,6 +66,7 @@ def train_model(dataloader, input_size, output_size):
     
     return model
 
+# 測試
 def inference(model, input_data):
     model.eval()
     with torch.no_grad():
@@ -74,6 +77,7 @@ def inference(model, input_data):
     model.train()
     return output
 
+# 可視化 繪製圖表
 def visualize(predict, targets):
     """
     可視化每一批次的預測值與真實目標值，將所有批次的數據拼接在一起。
@@ -103,21 +107,25 @@ def visualize(predict, targets):
     plt.show()
 
 # 設定資料夾路徑
-folder_path1 = "train"  # 替換成訓練資料夾路徑
+folder_path1 = "train"  # 專門存放訓練
 dataset1 = PokerDataset(folder_path1)
 dataloader1 = DataLoader(dataset1, batch_size=4, shuffle=True)
 
-folder_path2 = "test"  # 替換成測試資料夾路徑
+folder_path2 = "test"  # 專門存放測試
 dataset2 = PokerDataset(folder_path2)
 dataloader2 = DataLoader(dataset2, batch_size=4, shuffle=False)
 
+# 定義形狀
 C_in, N = (dataset1[0][0].shape)
 C_out, N = (dataset1[0][1].shape)
 input_size = C_in * N
 output_size = C_out * N
+
+# 訓練
 model = train_model(dataloader1, input_size, output_size)
 print("Training completed.")
 
+# 測試流程與可視化
 all_predict = []
 all_targets = []
 for features, targets in dataloader2:
@@ -140,7 +148,7 @@ k = 5
 kf = KFold(n_splits=k, shuffle=True, random_state=42)
 
 # 使用所有數據
-folder_path = "hand_record"  # 替換成訓練資料夾路徑
+folder_path = "hand_record"
 dataset = PokerDataset(folder_path)
 
 # 轉換數據格式

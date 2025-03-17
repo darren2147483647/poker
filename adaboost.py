@@ -41,7 +41,7 @@ gt = np.array(dataset.targets)
 # 分割訓練集和測試集
 X_train, X_test, y_train, y_test = train_test_split(features, gt, test_size=0.2, random_state=42)
 
-# 建立 AdaBoost 模型，基礎學習器使用決策樹
+# 建立 AdaBoost 模型
 model = AdaBoostClassifier(n_estimators=50, random_state=42)
 
 # 訓練模型
@@ -62,11 +62,10 @@ print(f"Precision: {precision:.2f}")
 print(f"Recall: {recall:.2f}")
 print(f"F1-score: {f1:.2f}")
 
-
-# 計算混淆矩陣
+# 計算confusion matrix
 cm = confusion_matrix(y_test, y_pred)
 
-# 繪製混淆矩陣
+# 繪製confusion matrix
 plt.figure(figsize=(6, 5))
 sns.heatmap(cm, annot=True, fmt="d", cmap="Blues", xticklabels=np.unique(y_test), yticklabels=np.unique(y_test))
 plt.xlabel("Predicted Label")

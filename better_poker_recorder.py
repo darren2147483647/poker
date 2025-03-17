@@ -1,6 +1,8 @@
 from pokerkit import *
 import re
 
+# 一些處理函式 用在自我風格的牌局簡記
+
 def read_from_file(file_path: str) -> list[str]:
     with open(file_path, 'r', encoding='utf-8') as file:
         return [line.strip() for line in file.readlines() if line.strip()]
@@ -84,6 +86,8 @@ def parse_poker_log_all(log):
         seg, f = parse_poker_log_other(i, merge_flop=f)
         segments=segments+seg
     return segments
+
+# 一些方便處理.phh檔的函式
 
 def check_hh(filename):
     # Load hand
@@ -298,6 +302,7 @@ def create_new_phh_from_eliminate(old_filename,new_filname,n_players=None,n_star
     write_hh(new_filname, game, n_state, n_players, others, fix = False)
 
 if __name__=="__main__":
+    # 根據需求隨意調整以降低標注負擔
     old_filename = "hand_record/16.phh"
     new_filename = "hand_record/17.phh"
     create_new_phh(old_filename,new_filename)
