@@ -16,7 +16,7 @@ class PokerDataset(Dataset):
         self.preprocess_data()
 
     def preprocess_data(self):
-        # 單一人 前注+盲注+起始籌碼+手牌1+手牌2+位置->預測最終籌碼regression
+        # 所有人 前注+盲注+起始籌碼+手牌1+手牌2+位置->預測最終籌碼regression
         # self.single_key = ['antes', 'blinds_or_straddles', 'starting_stacks', 'deck1', 'deck2', 'seat', 'play', 'finishing_stacks', 'win_or_lose_chip_amount', 'win_or_lose_chip_condition', 'bankrupt']
         data_interest = ['antes', 'blinds_or_straddles', 'starting_stacks', 'deck1', 'deck2', 'seat']
         target_interest = ['win_or_lose_chip_amount',]

@@ -10,4 +10,4 @@ day = 20
 month = 12
 year = 2024
 players = ['Christopher Nguyen', 'Liz Boeree', 'Marcelo Aziz', 'Mustapha Kanit', 'Vadzim Lipauka', 'Justin Bonomo', 'Michael Addamo', 'Georg Lehmann', 'Yinan Zhou']
-finishing_stacks = [135500000, 105500000, 102000000, 141500000, 53500000, 68000000, 190500000, 47000000, 94000000]
+finishing_stacks = [135500000, 105500000, 102000000, 141500000, 53500000, 71000000, 190500000, 47000000, 94000000]

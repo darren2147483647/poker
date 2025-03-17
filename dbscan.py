@@ -45,7 +45,7 @@ pca = PCA(n_components=2)
 features_2d = pca.fit_transform(features_norm)
 
 # 使用 DBSCAN 進行聚類分析
-dbscan = DBSCAN(eps=0.5, min_samples=5)
+dbscan = DBSCAN(eps=0.5, min_samples=3)
 dbscan_labels = dbscan.fit_predict(features_2d)
 
 # 繪製 DBSCAN 結果
